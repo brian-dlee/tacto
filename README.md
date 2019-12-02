@@ -23,9 +23,9 @@ type Person = {
 }
 
 const data: Person = [
-  {"name":"Joe","age":50},
-  {"name":"Maria","age"31},
-  {"name":"Maria","age"22}
+  {"name": "Joe","age": 50},
+  {"name": "Maria","age": 31},
+  {"name": "Maria","age": 22}
 ]
 
 // Uses currying to give you a reusable sort function
