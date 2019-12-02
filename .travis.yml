@@ -1,2 +1,9 @@
 language: node_js
-
+deploy:
+  provider: npm
+  email: briandl92391@gmail.com
+  api_key:
+    secure: FzbOg2iPvNOCBra9A0vuZv+xbsT/WTrwcasvzbCLQHQ+aeiaax4D45xG961BeqkUR7pnafcdJbDye7a8Z1883nPlCi0+sIxg+miDSiG/8Mzu0TrJ4JTZ22WaOYsqbTI2pZzVK5eIncxefUHGashrkVNmGwHqQVSbAc+qp2nj94TluAenH/zPbX9VENVEmdB4s8k83HzAVrQTLgNtVKEyi15XccYjtCj3CLh5Cb5sqmY6egah3e0WCSgFj08haVoLnLeR5DEwfjk39QCja22Ir9rAnhniV/PqkFhrTsBzFt6vd4Gy7S3ESJdKNxfecfn7zWHd9gfYJQttl9yQWHX4UriVn4AzAtgVzWfsC/f8mQD827fA1tzogqbpXp/5HC/u71v+qbvktXhJA4BmP2gwfWVgshKx5wTAtWNYvlrcY3wko6L27zUEpX8zIuihxZhtjNlCuQOi23QDaN6MmFPsw0wm4A1fTCctvUuxK0Rdvo00eGaxhKBLGkQbztjmXaWLNxBGqaVLRoroVX6HfjGkxbRTs7TkvBJ+ajfICGNHvcWxbOPJmZ8OE2QZY+xHAWPBJEtSe7Lu3OHMV1F+1Q/zM+lkxTy87WHY7Y37fxTMfAPf6RaOmRIqisRMxYpwceMpdMqPH+jFqPkYRfe1kRzkrRj6TrDf2OjthxFmyC1geUQ=
+  on:
+    tags: true
+    repo: brian-dlee/tacto
