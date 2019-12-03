@@ -4,14 +4,5 @@ node_js:
 install:
  - npm install -g codecov
  - npm install
-deploy:
-  provider: npm
-  email: briandl92391@gmail.com
-  edge: true
-  api_key:
-    secure: Jw7+AA8neQybHGIxrjJmJVuBZwNIqRKHZB++F2sR0kotr8Gt9/TpCblW7IrVlXa64OfHWSjM7N3qsmtAcDhr7cDwvitnFEGti6iyBEBSCLVEpeSm1wEZEWxXvOBiEr0vDYk/6stE4pMiMog0nWvoZmqwMvJRDpdPc7GCCFk3h3/K3Ko4Wr8hYopxGqsok5XyE1PT3S0AAZUeVFbWlhCapvmuwYq1hGYJuQKOlDMIjkWMBA6s/9nkjqkDGQ+u1ehqJWmDlp5aqLLPRN7hIqIjgQDWxge2BZs5Wrrzdu+fttvB+Kx58crevbov/1ChQ5m87UtHdAHi7rAj1Jxw7XSIuqfjOTdaRGQvbkggpd3/mWHSsArCBEhpAijtV+/w9GGEPgP6493e1TsrhQAyqvE0x0lr6ckmxfun1xz8HVsBdWgsTlj1V51Tbo8WvBZY1VMoUp9wkr7U+wcLSY5I6LFfWgxEL97p3TDsvCz+MqsEOkB6kxMusDdAbx3W2QKRN+3GuSNFi2Jd50N9K9za8IwcRlxpoU1y7+lwGOeAOIvOmfXyAPtItna4QLmJXfeDeQgDruL7V3dC6S4wUa0JDWfXcoG/UnS19B10iQTbczFgFMHrUe9OxGHE3O3VOX4AmWxYNThd4mOWMAycYnLBa+tQAH1BNPYaJrrAuv0hSHt2aUg=
-  on:
-    branch: master 
-    repo: brian-dlee/tacto
 after_success:
  - codecov
