@@ -7,7 +7,7 @@ install:
 after_success:
 - codecov
 before_deploy:
-- zip -Jr tacto-$(npm view tacto version).zip lib/
+- cd lib && zip -r ../tacto-$(npm view tacto version).zip *
 deploy:
   provider: releases
   file: 'tacto-*.zip'
