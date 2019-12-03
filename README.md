@@ -7,22 +7,43 @@ A convenient functional sorting library for javascript. Tacto uses the native so
 but provides abstractions to make then more readable and reusable. Also, it will always return shallow copies rather than
 mutating the input data.
 
-## Simple sorts
+## Basic sorting
 
 ```typescript
 import { asc, desc } from 'tacto'
-const data = [6, 7, 2]
-asc(data) 
+
+asc([6, 7, 2]) 
 // Tacto always returns a new copy of the input
 // => [2, 6, 7]
+
 desc(["cat", "dog", "bird"]) 
 // => ["dog", "cat", "bird"]
+
 asc(["10", "101", "1001"]) 
 // String values mean lexicographical ordering
 // => ["10", "1001", "101"]
 ```
 
-## Object and multi-dimension sorts
+## Evaluators
+
+Let's revisit the previous example where we have numbers as strings, but want to sort them numerically.
+
+```typescript
+import tacto, { sorters } from 'tacto'
+
+// Normally, the evaluator would be written inline
+// It's extracted here for clarity
+const evaluateString = x => parseInt(x, 10)
+
+const sortNumerically = tacto<number>(
+  sorters.asc(evaluateString)
+)
+
+sortNumerically(["101", "10", "1001"])
+// => ["10", "101", "1001"]
+```
+
+## Object and multi-dimension sorting
 
 ```typescript
 import tacto, { sorters } from 'tacto'
@@ -52,7 +73,7 @@ sortPersons(data)
 // ]
 ```
 
-## Custom sorters
+## Customized sorting
 
 Maybe you have strange sort logic or you just have a function available that already has the sort logic implemented and requires both arguments as input. In this case, simply use the `raw` sorter.
 
