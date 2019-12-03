@@ -2,7 +2,7 @@ import tacto, { sorters, asc, desc } from "../";
 
 describe("Tacto", () => {
     it("Should return shallow copies", () => {
-        const a = [4, 2, 3, 5, 9, 8]
+        const a = [4, 3, 3, 5, 9, 8]
         expect(tacto<number>(sorters.asc(x => x))(a)).not.toBe(a);
     })
 
