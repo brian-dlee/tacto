@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- 10
+ - 10
 deploy:
   provider: npm
   email: briandl92391@gmail.com
@@ -9,3 +9,5 @@ deploy:
   on:
     tags: true
     repo: brian-dlee/tacto
+after_success:
+ - codecov
