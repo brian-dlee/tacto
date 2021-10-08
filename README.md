@@ -1,6 +1,6 @@
 # Tacto
 
-![Travis (.org)](https://img.shields.io/travis/brian-dlee/tacto?logo=travis)
+![Tests](https://github.com/github/docs/actions/workflows/test.yml/badge.svg)
 ![Codecov](https://img.shields.io/codecov/c/github/brian-dlee/tacto?logo=codecov)
 
 A convenient functional sorting library for javascript. Tacto uses the native sorting implementation under the hood
