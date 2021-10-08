@@ -1,7 +1,14 @@
 # Tacto
 
 ![Tests](https://github.com/github/docs/actions/workflows/test.yml/badge.svg)
+![Latest Release](https://badge.fury.io/js/tacto.svg)
 ![Codecov](https://img.shields.io/codecov/c/github/brian-dlee/tacto?logo=codecov)
+
+## Getting started
+
+```shell
+npm install --save tacto
+```
 
 A convenient functional sorting library for javascript. Tacto uses the native sorting implementation under the hood
 but provides abstractions to make then more readable and reusable. Also, it will always return shallow copies rather than
