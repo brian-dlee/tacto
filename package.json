@@ -1,10 +1,10 @@
 {
   "name": "tacto",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A convenient Javascript sorting library.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "jest",
     "build": "tsc",
