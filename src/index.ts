@@ -46,6 +46,8 @@ const tacto = <T>(...sorts: Array<Sorter<T>>): SortingFunction<T> => {
   });
 };
 
+tacto.sorters = sorters
+
 export const asc = tacto<EvaluationResult>(sorters.asc(x => x))
 export const desc = tacto<EvaluationResult>(sorters.desc(x => x))
 

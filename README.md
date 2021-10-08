@@ -46,7 +46,7 @@ sortNumerically(["101", "10", "1001"])
 ## Object and multi-dimension sorting
 
 ```typescript
-import tacto, { sorters } from 'tacto'
+import tacto from 'tacto'
 
 type Person = {
   name: string,
@@ -61,8 +61,8 @@ const data: Person = [
 
 // Uses currying to give you a reusable sort function
 const sortPersons = tacto<Person>(
-  sorters.desc(x => x.name), 
-  sorters.asc(x => x.age)
+  tacto.sorters.desc(x => x.name), 
+  tacto.sorters.asc(x => x.age)
 )
 
 sortPersons(data)
