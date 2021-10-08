@@ -16,7 +16,8 @@ jobs:
         with:
           node-version: 14
       - run: npm ci
-      - run: npm test
+      - run: npm test -- --coverage
+      - uses: codecov/codecov-action@v2
 
   publish-npm:
     needs: build
