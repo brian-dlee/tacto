@@ -1,4 +1,4 @@
-type EvaluationResult = number | string;
+type EvaluationResult = number | string | Date;
 type EvaluationFunction<T> = (x: T) => EvaluationResult;
 type CompareFunction<T> = (a: T, b: T) => number;
 type SortingFunction<T> = (sequence: T[]) => T[];
@@ -32,6 +32,8 @@ const tacto = <T>(...sorts: Array<Sorter<T>>): SortingFunction<T> => {
 
           if (typeof v1 === 'number' && typeof v2 === 'number') {
             result = (sort.type === 'desc' ? -1 : 1) * (v1 - v2)
+          } else if (v1 instanceof Date && v2 instanceof Date) {
+            result = (sort.type === 'desc' ? -1 : 1) * (v1.valueOf() - v2.valueOf())
           } else {
             result = (sort.type === 'desc' ? -1 : 1) * v1.toString().localeCompare(v2.toString())
           }
