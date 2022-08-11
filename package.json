@@ -31,10 +31,6 @@
   "files": [
     "lib/**/*"
   ],
-  "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
-  },
   "homepage": "https://github.com/brian-dlee/tacto#readme",
   "devDependencies": {
     "@types/jest": "^27.0.2",
