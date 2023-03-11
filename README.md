@@ -10,7 +10,7 @@
 npm install --save tacto
 ```
 
-A convenient functional sorting library for javascript. Tacto uses the native sorting implementation under the hood
+A convenient functional sorting library written in Typescript. Tacto uses the native sorting implementation under the hood
 but provides abstractions to make then more readable and reusable. Also, it will always return shallow copies rather than
 mutating the input data.
 
