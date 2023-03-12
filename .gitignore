@@ -6,3 +6,5 @@ node_modules
 apps/**/build
 apps/**/.cache
   
+# Local Netlify folder
+.netlify
