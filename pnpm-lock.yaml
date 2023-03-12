@@ -14,6 +14,7 @@ importers:
       '@remix-run/node': ^1.14.1
       '@remix-run/react': ^1.14.1
       '@remix-run/serve': ^1.14.1
+      '@remix-run/server-runtime': ^1.14.1
       '@types/react': ^18.0.25
       '@types/react-dom': ^18.0.8
       cross-env: ^7.0.3
@@ -30,6 +31,7 @@ importers:
       '@remix-run/netlify': 1.14.1_@netlify+functions@1.4.0
       '@remix-run/node': 1.14.1
       '@remix-run/react': 1.14.1_biqbaboplfbrettd7655fr4n2y
+      '@remix-run/server-runtime': 1.14.1
       isbot: 3.6.6
       loose-envify: 1.4.0
       react: 18.2.0
