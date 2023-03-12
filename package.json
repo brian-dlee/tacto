@@ -1,49 +1,22 @@
 {
-  "name": "tacto",
-  "version": "1.0.7",
-  "description": "A convenient and pure Javascript sorting library using composition and zero external dependencies.",
-  "browser": "lib/index.js",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "type": "commonjs",
-  "scripts": {
-    "test": "jest",
-    "build": "tsc",
-    "format": "eslint --fix \"src/**/*\"",
-    "lint": "eslint \"src/**/*\"",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brian-dlee/tacto.git"
-  },
-  "keywords": [
-    "nodejs",
-    "javascript",
-    "sort"
-  ],
-  "author": "Brian Lee <briandl92391@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/brian-dlee/tacto/issues"
-  },
-  "files": [
-    "lib/**/*"
-  ],
-  "homepage": "https://github.com/brian-dlee/tacto#readme",
   "devDependencies": {
-    "@types/jest": "^27.0.2",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
-    "eslint": "^7.32.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-jest": "^24.5.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "jest": "^27.2.4",
-    "ts-jest": "^27.0.5",
-    "typescript": "^4.4.3"
-  }
+    "eslint": "^8.36.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "glob": "^9.2.1",
+    "prettier": "^2.8.4",
+    "typescript": "~4.9.5"
+  },
+  "scripts": {
+    "build": "npm run -w packages/tacto build && npm run -w apps/demo build",
+    "dev": "./scripts/dev.js",
+    "lint": "concurrently \"npm run -w packages/tacto lint\" \"npm run -w apps/demo lint\"",
+    "publish": "nx publish tacto",
+    "test": "concurrently \"npm run -w packages/tacto test\" \"npm run -w apps/demo test\""
+  },
+  "workspaces": [
+    "apps/demo",
+    "packages/tacto"
+  ]
 }

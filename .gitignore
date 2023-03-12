@@ -1,3 +1,8 @@
 node_modules
-/lib
-/coverage
+
+.vercel
+
+# Remix files
+apps/**/build
+apps/**/.cache
+  
