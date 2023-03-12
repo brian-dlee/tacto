@@ -28,6 +28,7 @@ importers:
       '@remix-run/netlify': 1.14.1_@netlify+functions@1.4.0
       '@remix-run/node': 1.14.1
       '@remix-run/react': 1.14.1_biqbaboplfbrettd7655fr4n2y
+      isbot: 3.6.6
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       tacto: link:../../packages/tacto
@@ -39,7 +40,6 @@ importers:
       '@types/react-dom': 18.0.11
       cross-env: 7.0.3
       eslint: 8.36.0
-      isbot: 3.6.6
       typescript: 4.9.5
 
   packages/tacto:
@@ -6520,7 +6520,7 @@ packages:
   /isbot/3.6.6:
     resolution: {integrity: sha512-98aGl1Spbx1led422YFrusDJ4ZutSNOymb2avZ2V4BCCjF3MqAF2k+J2zoaLYahubaFkb+3UyvbVDVlk/Ngrew==}
     engines: {node: '>=12'}
-    dev: true
+    dev: false
 
   /isexe/2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
