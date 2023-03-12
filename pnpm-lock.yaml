@@ -22,6 +22,7 @@ importers:
       loose-envify: ^1.4.0
       react: ^18.2.0
       react-dom: ^18.2.0
+      scheduler: ^0.23.0
       tacto: workspace:tacto@latest
       typescript: ^4.8.4
     dependencies:
@@ -33,6 +34,7 @@ importers:
       loose-envify: 1.4.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      scheduler: 0.23.0
       tacto: link:../../packages/tacto
     devDependencies:
       '@remix-run/dev': 1.14.1_@remix-run+serve@1.14.1
