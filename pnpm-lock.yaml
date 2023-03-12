@@ -18,6 +18,7 @@ importers:
       '@types/react-dom': ^18.0.8
       cross-env: ^7.0.3
       eslint: ^8.27.0
+      isbot: ^3.6.6
       react: ^18.2.0
       react-dom: ^18.2.0
       tacto: workspace:tacto@latest
@@ -38,6 +39,7 @@ importers:
       '@types/react-dom': 18.0.11
       cross-env: 7.0.3
       eslint: 8.36.0
+      isbot: 3.6.6
       typescript: 4.9.5
 
   packages/tacto:
@@ -6513,6 +6515,11 @@ packages:
 
   /isarray/2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
+    dev: true
+
+  /isbot/3.6.6:
+    resolution: {integrity: sha512-98aGl1Spbx1led422YFrusDJ4ZutSNOymb2avZ2V4BCCjF3MqAF2k+J2zoaLYahubaFkb+3UyvbVDVlk/Ngrew==}
+    engines: {node: '>=12'}
     dev: true
 
   /isexe/2.0.0:
