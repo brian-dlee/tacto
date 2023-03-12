@@ -1,6 +1,7 @@
 [build]
   command = "pnpm run -w build"
   publish = "public"
+  environment = { PNPM_FLAGS = "--shamefully-hoist" }
 
 [dev]
   command = "remix watch"
