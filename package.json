@@ -1,22 +1,9 @@
 {
-  "devDependencies": {
-    "eslint": "^8.36.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
-    "eslint-plugin-unused-imports": "^2.0.0",
-    "glob": "^9.2.1",
-    "prettier": "^2.8.4",
-    "typescript": "~4.9.5"
-  },
   "scripts": {
-    "build": "npm run -w packages/tacto build && npm run -w apps/demo build",
-    "dev": "./scripts/dev.js",
-    "lint": "concurrently \"npm run -w packages/tacto lint\" \"npm run -w apps/demo lint\"",
-    "publish": "nx publish tacto",
-    "test": "concurrently \"npm run -w packages/tacto test\" \"npm run -w apps/demo test\""
-  },
-  "workspaces": [
-    "apps/demo",
-    "packages/tacto"
-  ]
+    "clean": "pnpm run -r clean",
+    "build": "pnpm clean && pnpm run -r --parallel build",
+    "dev": "pnpm run -r --parallel dev",
+    "lint": "pnpm run -r --parallel lint",
+    "test": "pnpm run -r --parallel test"
+  }
 }
