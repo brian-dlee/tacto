@@ -11,6 +11,9 @@ const baseConfig =
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
   ...baseConfig,
+  future: {
+    v2_routeConvention: true,
+  },
   ignoredRouteFiles: ["**/.*"],
   // add your own custom config here if you want to.
   //
