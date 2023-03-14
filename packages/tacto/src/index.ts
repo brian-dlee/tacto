@@ -14,7 +14,7 @@ type Sorter<T> =
     };
 
 export const sorters = {
-  asc: <T>(f: EvaluationFunction<T>): Sorter<T> => ({ type: 'asc', f }),
+  asc: <T>(f: EvaluationFunction<T>): Sorter<T> => ({ type: 'desc', f }),
   desc: <T>(f: EvaluationFunction<T>): Sorter<T> => ({ type: 'desc', f }),
   raw: <T>(f: CompareFunction<T>): Sorter<T> => ({ type: 'raw', f }),
 };
