@@ -1,5 +1,5 @@
 [build]
-command = "cd ../.. && npm run -w tacto build && remix build && cp _app_redirects public/_redirects"
+command = "cd ../.. && npm run -w tacto build && cd apps/demo && remix build && cp _app_redirects public/_redirects"
 publish = "public"
 
 [build.environment]
