@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     'jest/globals': true,
   },
-  extends: ['standard', 'plugin:@typescript-eslint/recommended', 'pretier'],
+  extends: ['standard', 'plugin:@typescript-eslint/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
