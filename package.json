@@ -1,4 +1,6 @@
 {
+  "private": true,
+  "name": "@tacto/project",
   "scripts": {
     "clean": "pnpm run -r clean",
     "build": "pnpm clean && pnpm run -r --parallel build",
