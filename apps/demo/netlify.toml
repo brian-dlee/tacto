@@ -1,5 +1,5 @@
 [build]
-command = "remix build && cp _app_redirects public/_redirects"
+command = "pnpm run -w build && cp _app_redirects public/_redirects"
 publish = "public"
 
 [build.environment]
