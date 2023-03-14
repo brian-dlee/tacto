@@ -1,5 +1,5 @@
 [build]
-command = "pnpm run -w --filter=tacto build && npm install && pnpm run build && cp _app_redirects public/_redirects"
+command = "remix build && cp _app_redirects public/_redirects"
 publish = "public"
 
 [build.environment]
