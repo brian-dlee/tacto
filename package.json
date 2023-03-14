@@ -1,15 +1,4 @@
 {
-  "private": true,
-  "name": "@tacto/project",
-  "scripts": {
-    "clean": "pnpm run -r clean",
-    "build": "pnpm clean && pnpm run -r --parallel build",
-    "dev": "pnpm run -r --parallel dev",
-    "lint": "pnpm run -r --parallel lint",
-    "test": "pnpm run -r --parallel test"
-  },
-  "workspaces": [
-    "apps/demo",
-    "packages/tacto"
-  ]
+  "name": "tacto",
+  "packageManager": "yarn@3.4.1"
 }
