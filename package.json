@@ -1,8 +1,3 @@
 {
-  "name": "@tacto/project",
-  "packageManager": "yarn@3.4.1",
-  "workspaces": [
-    "apps/demo",
-    "packages/tacto"
-  ]
+  "name": "@tacto/project"
 }
