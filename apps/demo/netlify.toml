@@ -2,6 +2,9 @@
 command = "remix build && cp _app_redirects public/_redirects"
 publish = "public"
 
+[build.environment]
+PNPM_FLAGS = "--shamefully-hoist"
+
 [dev]
 command = "npm run dev"
 targetPort = 3000
