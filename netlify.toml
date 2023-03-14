@@ -1,2 +1,5 @@
 [build]
 base = "apps/demo"
+
+[build.environment]
+PNPM_FLAGS = "--shamefully-hoist"
