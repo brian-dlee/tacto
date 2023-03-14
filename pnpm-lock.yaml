@@ -21,7 +21,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       rimraf: ^4.4.0
-      tacto: workspace:^
+      tacto: workspace:tacto@latest
       typescript: ^4.9.5
     dependencies:
       '@netlify/functions': 1.4.0
