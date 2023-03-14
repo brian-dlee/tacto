@@ -2981,6 +2981,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tacto/demo@workspace:apps/demo":
+  version: 0.0.0-use.local
+  resolution: "@tacto/demo@workspace:apps/demo"
+  dependencies:
+    "@netlify/functions": ^1.4.0
+    "@remix-run/dev": ^1.14.1
+    "@remix-run/eslint-config": ^1.14.1
+    "@remix-run/netlify": ^1.14.1
+    "@remix-run/node": ^1.14.1
+    "@remix-run/react": ^1.14.1
+    "@remix-run/serve": ^1.14.1
+    "@types/react": ^18.0.28
+    "@types/react-dom": ^18.0.11
+    cross-env: ^7.0.3
+    eslint: ^8.36.0
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    rimraf: ^4.4.0
+    tacto: "workspace:^"
+    typescript: ^4.9.5
+  languageName: unknown
+  linkType: soft
+
 "@tacto/project@workspace:.":
   version: 0.0.0-use.local
   resolution: "@tacto/project@workspace:."
@@ -4923,29 +4946,6 @@ __metadata:
   checksum: a51744d9b53c164ba9c0492471a1a2ffa0b6727451bdc89e31627fdf4adda9d51277cfcbfb20f0a6f08ccb3c436f341df3e92631a3440226d93a8971724771fd
   languageName: node
   linkType: hard
-
-"demo-91fca7@workspace:apps/demo":
-  version: 0.0.0-use.local
-  resolution: "demo-91fca7@workspace:apps/demo"
-  dependencies:
-    "@netlify/functions": ^1.4.0
-    "@remix-run/dev": ^1.14.1
-    "@remix-run/eslint-config": ^1.14.1
-    "@remix-run/netlify": ^1.14.1
-    "@remix-run/node": ^1.14.1
-    "@remix-run/react": ^1.14.1
-    "@remix-run/serve": ^1.14.1
-    "@types/react": ^18.0.28
-    "@types/react-dom": ^18.0.11
-    cross-env: ^7.0.3
-    eslint: ^8.36.0
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    rimraf: ^4.4.0
-    tacto: ^1.0.7
-    typescript: ^4.9.5
-  languageName: unknown
-  linkType: soft
 
 "depd@npm:2.0.0, depd@npm:^2.0.0, depd@npm:~2.0.0":
   version: 2.0.0
@@ -11543,7 +11543,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tacto@^1.0.7, tacto@workspace:packages/tacto":
+"tacto@workspace:^, tacto@workspace:packages/tacto":
   version: 0.0.0-use.local
   resolution: "tacto@workspace:packages/tacto"
   dependencies:
