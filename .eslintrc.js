@@ -4,18 +4,11 @@ module.exports = {
     es2021: true,
     'jest/globals': true,
   },
-  extends: [
-    'standard'
-  ],
+  extends: ['standard', 'plugin:@typescript-eslint/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    '@typescript-eslint',
-    'jest'
-  ],
-  rules: {
-  }
-}
+  plugins: ['@typescript-eslint', 'jest'],
+};
