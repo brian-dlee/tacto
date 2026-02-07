@@ -1,7 +1,6 @@
-import type { LoaderFunction } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
-import { json } from "@remix-run/node";
-import tacto from "tacto";
+import type { LoaderFunctionArgs } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
+import tacto from 'tacto';
 
 interface RGB {
   red: number;
@@ -16,12 +15,8 @@ interface Person {
   favoriteColor: RGB;
 }
 
-interface LoaderData {
-  people: Person[];
-}
-
 function zp(input: string, length: number): string {
-  return `${"0".repeat(Math.max(length - input.length, 0))}${input}`;
+  return `${'0'.repeat(Math.max(length - input.length, 0))}${input}`;
 }
 
 function rgbToHex(rgb: RGB): string {
@@ -54,47 +49,46 @@ const sorter = tacto<Person>(
   // include our obscure compare function
   tacto.sorters.raw(comparePersonCountry),
   // name is our tie-breaker
-  tacto.sorters.asc(({ name }) => name)
+  tacto.sorters.asc(({ name }) => name),
 );
 
-export const loader: LoaderFunction = async () => {
-  const response = await fetch("https://lorem-json.com/api/json", {
-    method: "POST",
+export async function loader({ request }: LoaderFunctionArgs) {
+  const response = await fetch('https://lorem-json.com/api/json', {
+    method: 'POST',
     body: JSON.stringify({
       people: {
         count: 300,
-        type: "array",
+        type: 'array',
         items: {
-          name: "{{name()}}",
-          birthday: "{{dateTime(1920-01-01, 1971-01-01)}}",
+          name: '{{name()}}',
+          birthday: '{{dateTime(1920-01-01, 1971-01-01)}}',
           favoriteColor: {
-            red: "{{int(0, 256)}}",
-            green: "{{int(0, 256)}}",
-            blue: "{{int(0, 256)}}",
+            red: '{{int(0, 256)}}',
+            green: '{{int(0, 256)}}',
+            blue: '{{int(0, 256)}}',
           },
-          country: "{{country()}}",
+          country: '{{country()}}',
         },
       },
     }),
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   });
 
   const data: { people: Person[] } = await response.json();
 
-  return json<LoaderData>({ people: sorter(data.people) });
-};
+  return { people: sorter(data.people) };
+}
 
 export default function Index() {
-  const { people } = useLoaderData<LoaderData>();
+  const { people } = useLoaderData<typeof loader>();
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
       <h1>Tacto Demo</h1>
       <p>
-        The sorter in this page takes a list of <code>Person</code> objects.
-        Each person contains:
+        The sorter in this page takes a list of <code>Person</code> objects. Each person contains:
         <ul>
           <li>
             <code>name (string)</code>
@@ -106,21 +100,15 @@ export default function Index() {
             <code>country (string)</code>
           </li>
           <li>
-            <code>
-              favoriteColor (&#123; red: number, green: number, blue: number
-              &#125;)
-            </code>
+            <code>favoriteColor (&#123; red: number, green: number, blue: number &#125;)</code>
           </li>
         </ul>
       </p>
       <p>
-        The sorter first sorts each <code>Person</code> by their favorite color
-        according to how light/dark the color is, then they are sorted
-        chronologically by their birthdays, next they are sorted by a custom
-        comparison function that evaluates the name of the country, and lastly
-        alphabetically by their name. The sort is not very practical, but it
-        shows the flexibility of the library. Below is what the main sorter
-        composition looks like.
+        The sorter first sorts each <code>Person</code> by their favorite color according to how light/dark the color is,
+        then they are sorted chronologically by their birthdays, next they are sorted by a custom comparison function that
+        evaluates the name of the country, and lastly alphabetically by their name. The sort is not very practical, but it
+        shows the flexibility of the library. Below is what the main sorter composition looks like.
       </p>
       <p>
         <pre>
@@ -140,14 +128,11 @@ const sorter = tacto<Person>(
         {people.map((person, i) => {
           const birthday = new Date(person.birthday).toLocaleDateString();
           const color = `#${rgbToHex(person.favoriteColor)}`;
-          const background = `${
-            rgbToLightness(person.favoriteColor) < 128 ? "white" : "black"
-          }`;
+          const background = `${rgbToLightness(person.favoriteColor) < 128 ? 'white' : 'black'}`;
           return (
             <li key={i}>
-              {person.name},{" "}
-              <span style={{ color, background }}>Favorite Color {color}</span>,
-              from {person.country}, born on {birthday}
+              {person.name}, <span style={{ color, background }}>Favorite Color {color}</span>, from {person.country},
+              born on {birthday}
             </li>
           );
         })}
