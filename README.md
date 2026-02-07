@@ -1,6 +1,6 @@
 # Tacto
 
-![Tests](https://github.com/github/docs/actions/workflows/test.yml/badge.svg)
+![CI](https://github.com/brian-dlee/tacto/actions/workflows/ci.yml/badge.svg)
 ![Latest Release](https://badge.fury.io/js/tacto.svg)
 ![Codecov](https://img.shields.io/codecov/c/github/brian-dlee/tacto?logo=codecov)
 

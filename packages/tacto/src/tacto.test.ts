@@ -1,4 +1,5 @@
-import tacto, { sorters, asc, desc } from '../src';
+import { describe, expect, it } from 'vitest';
+import tacto, { asc, desc, sorters } from '../src';
 
 describe('Tacto', () => {
   it('Should return shallow copies', () => {
