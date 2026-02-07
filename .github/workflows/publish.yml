@@ -1,14 +1,15 @@
-name: CI
+name: Publish
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  release:
+    types: [published]
 
 jobs:
-  test:
+  publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -16,8 +17,11 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
+          registry-url: https://registry.npmjs.org
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter tacto build
-      - run: pnpm --filter tacto lint
       - run: pnpm --filter tacto test
-      - run: pnpm --filter @tacto/demo typecheck
+      - run: npm publish --provenance --access public
+        working-directory: packages/tacto
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
