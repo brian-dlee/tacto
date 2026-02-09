@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+.react-router/
 /tmp
 /out-tsc
 

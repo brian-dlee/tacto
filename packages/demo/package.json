@@ -4,21 +4,22 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
-    "dev": "remix vite:dev",
-    "typecheck": "tsc"
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@remix-run/node": "^2.16.0",
-    "@remix-run/react": "^2.16.0",
-    "@remix-run/serve": "^2.16.0",
+    "@react-router/node": "^7.13.0",
+    "@react-router/serve": "^7.13.0",
     "isbot": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router": "^7.13.0",
     "tacto": "workspace:tacto"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.16.0",
+    "@react-router/dev": "^7.13.0",
+    "@react-router/fs-routes": "^7.13.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "typescript": "^5.0.0",
@@ -26,6 +27,6 @@
     "vite-tsconfig-paths": "^4.3.0"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }

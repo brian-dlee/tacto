@@ -1,5 +1,5 @@
-import type { LoaderFunctionArgs } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import type { LoaderFunctionArgs } from 'react-router';
+import { useLoaderData } from 'react-router';
 import tacto from 'tacto';
 
 interface RGB {
@@ -52,33 +52,40 @@ const sorter = tacto<Person>(
   tacto.sorters.asc(({ name }) => name),
 );
 
+const FIRST_NAMES = [
+  'Alice', 'Bob', 'Charlie', 'Diana', 'Edward', 'Fiona', 'George', 'Hannah',
+  'Ivan', 'Julia', 'Kevin', 'Laura', 'Michael', 'Nina', 'Oscar', 'Patricia',
+  'Quentin', 'Rachel', 'Samuel', 'Tina', 'Ulrich', 'Vera', 'Walter', 'Xena',
+  'Yusuf', 'Zara', 'Amir', 'Beatrice', 'Carlos', 'Daphne',
+];
+
+const LAST_NAMES = [
+  'Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller',
+  'Davis', 'Rodriguez', 'Martinez', 'Hernandez', 'Lopez', 'Gonzalez',
+  'Wilson', 'Anderson', 'Thomas', 'Taylor', 'Moore', 'Jackson', 'Martin',
+];
+
+const COUNTRIES = [
+  'Japan', 'Brazil', 'France', 'India', 'Canada', 'Germany', 'Australia',
+  'Mexico', 'Italy', 'Spain', 'Peru', 'Chile', 'Norway', 'Sweden', 'Finland',
+  'Poland', 'Egypt', 'Kenya', 'Cuba', 'Iran', 'Nepal', 'Fiji',
+];
+
+function randomInt(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function generatePeople(count: number): Person[] {
+  return Array.from({ length: count }, () => ({
+    name: `${FIRST_NAMES[randomInt(0, FIRST_NAMES.length)]} ${LAST_NAMES[randomInt(0, LAST_NAMES.length)]}`,
+    birthday: new Date(randomInt(1920, 1971), randomInt(0, 12), randomInt(1, 28)).toISOString(),
+    favoriteColor: { red: randomInt(0, 256), green: randomInt(0, 256), blue: randomInt(0, 256) },
+    country: COUNTRIES[randomInt(0, COUNTRIES.length)],
+  }));
+}
+
 export async function loader({ request }: LoaderFunctionArgs) {
-  const response = await fetch('https://lorem-json.com/api/json', {
-    method: 'POST',
-    body: JSON.stringify({
-      people: {
-        count: 300,
-        type: 'array',
-        items: {
-          name: '{{name()}}',
-          birthday: '{{dateTime(1920-01-01, 1971-01-01)}}',
-          favoriteColor: {
-            red: '{{int(0, 256)}}',
-            green: '{{int(0, 256)}}',
-            blue: '{{int(0, 256)}}',
-          },
-          country: '{{country()}}',
-        },
-      },
-    }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  const data: { people: Person[] } = await response.json();
-
-  return { people: sorter(data.people) };
+  return { people: sorter(generatePeople(300)) };
 }
 
 export default function Index() {
