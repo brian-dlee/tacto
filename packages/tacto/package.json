@@ -24,7 +24,6 @@
     "dev": "tsup --watch",
     "format": "biome check --write src",
     "lint": "biome check src",
-    "publish": "npm publish",
     "test": "vitest run",
     "test:watch": "vitest"
   },

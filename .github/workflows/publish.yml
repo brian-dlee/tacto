@@ -23,5 +23,3 @@ jobs:
       - run: pnpm --filter tacto test
       - run: npm publish --provenance --access public
         working-directory: packages/tacto
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
